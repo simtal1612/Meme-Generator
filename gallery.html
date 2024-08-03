@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/gallery.css" />
+    <title>Canvas</title>
+</head>
+<body>
+    <nav class="navbar">
+        <img src="logo/LOGO.png" class="logo"/>  
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="">MEMES</a>
+            <a href="">ABOUT</a>
+        </div>
+    </nav>
+    <h1>
+        Gallery
+    </h1>
+    <section>
+        <img src="gallery/1.jpg" class="gallery-image" onclick="onImageSelect('gallery/1.jpg')" />
+        <img src="gallery/2.jpg" class="gallery-image" onclick="onImageSelect('gallery/2.jpg')" />
+        <img src="gallery/3.jpg" class="gallery-image" onclick="onImageSelect('gallery/3.jpg')" />
+        <img src="gallery/4.jpg" class="gallery-image" onclick="onImageSelect('gallery/4.jpg')" />
+        <img src="gallery/5.jpg" class="gallery-image" onclick="onImageSelect('gallery/5.jpg')" />
+    </section>
+    <script src="js/memeService.js"></script>
+    <script src="js/memeController.js"></script>
+    <script src="js/galleryController.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', onInit);
+    </script>
+</body>
+</html>
