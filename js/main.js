@@ -31,4 +31,4 @@ function resizeCanvas() {
     gElCanvas.height = elContainer.clientHeight - 40 
     renderMeme() 
 }
-//commit
+// comon commit
