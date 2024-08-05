@@ -83,7 +83,7 @@ function renderMeme(withFrame = true) {
         })
     }
 }
-
+//
 function onTextInput() {
     const text = document.querySelector('.text-input').value
     setLineTxt(text)
