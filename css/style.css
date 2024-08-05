@@ -1,38 +1,11 @@
 body {
     text-align: center;
     font-family: Arial, sans-serif;
-}
-
-.canvas-container {
-    background-color: white;
-    width: 500px;
-    height: 500px; 
-    max-width: 1000px; 
-    padding: 20px;
-    margin: auto;
+    margin: 0;
+    background-color: #f0f0f0;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 8px; 
-}
-
-canvas {
-    background-color: white;
-    border: 1px solid black;
-}
-
-button {
-    margin-top: 1.5em;
-    padding: 10px 20px; 
-    font-size: 16px; 
-    border: none; 
-    border-radius: 5px; 
-    background-color: #333333; 
-    cursor: pointer; 
-}
-
-button:hover {
-    background-color: #555555; 
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .navbar {
@@ -40,31 +13,58 @@ button:hover {
     justify-content: space-between;
     align-items: center;
     background-color: #333333;
-    padding: 0 20px;
-}
-
-.nav-links {
-    display: flex;
-}
-
-.navbar a {
-    padding: 14px 20px;
-    display: block;
+    padding: 10px 20px;
     color: white;
-    text-align: center;
-    text-decoration: none;
 }
 
-.navbar a:hover {
-    background-color: #ddd;
-    color: black;
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
 }
 
 .logo {
-    width: 150px;
-    height: auto;
+    width: 100px;
 }
-button {
+
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.editor, .gallery {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.canvas-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.canvas {
+    background-color: white;
+    border: 1px solid black;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+button, .icon-button {
     margin-top: 1.5em;
     padding: 10px 20px;
     font-size: 16px;
@@ -75,13 +75,43 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+button:hover, .icon-button:hover {
     background-color: #555555;
 }
 
 .icon-button {
     width: 40px; 
     height: 40px; 
-
     cursor: pointer;
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.gallery-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.gallery-image:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333333;
+    color: white;
+    padding: 20px;
+    font-size: 1.5em;
+    margin-top: auto;
 }
