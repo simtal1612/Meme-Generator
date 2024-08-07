@@ -17,6 +17,11 @@ body {
     color: white;
 }
 
+.nav-links {
+    display: flex;
+    gap: 10px;
+}
+
 .nav-links a {
     color: white;
     text-decoration: none;
@@ -39,7 +44,7 @@ body {
     padding: 20px;
 }
 
-.editor, .gallery {
+.editor, .gallery, .saved-memes {
     background: white;
     padding: 20px;
     border-radius: 8px;
@@ -56,16 +61,32 @@ body {
 .canvas {
     background-color: white;
     border: 1px solid black;
+    max-width: 100%;
+    height: auto;
 }
 
 .controls {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    align-items: center;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.control-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 button, .icon-button {
-    margin-top: 1.5em;
     padding: 10px 20px;
     font-size: 16px;
     border: none;
@@ -80,9 +101,11 @@ button:hover, .icon-button:hover {
 }
 
 .icon-button {
-    width: 40px; 
-    height: 40px; 
-    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .gallery-container {
@@ -114,4 +137,81 @@ footer {
     padding: 20px;
     font-size: 1.5em;
     margin-top: auto;
+}
+
+.image-input {
+    display: block;
+    margin: 10px auto;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .editor, .gallery, .saved-memes {
+        padding: 10px;
+    }
+
+    button, .icon-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .icon-button {
+        width: 35px;
+        height: 35px;
+    }
+
+    .canvas {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .nav-links a {
+        margin: 5px 0;
+    }
+
+    .logo {
+        width: 80px;
+    }
+
+    .editor, .gallery, .saved-memes {
+        padding: 10px;
+    }
+
+    .controls {
+        gap: 5px;
+    }
+
+    .button-container {
+        margin-top: 10px;
+    }
+
+    button, .icon-button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .icon-button {
+        width: 30px;
+        height: 30px;
+    }
 }

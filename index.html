@@ -13,7 +13,7 @@
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="gallery.html">Gallery</a>
-            <a href="#">MEMES</a>
+            <a href="memes.html">Memes</a>
             <a href="#">ABOUT</a>
         </div>
     </nav>
@@ -38,29 +38,53 @@
                     </select>
                     <input type="number" class="font-size" value="20" min="10" onchange="onFontSizeChange()" />
                 </div>
-                <div class="control-row1">
-                </div>
-                <div class="control-row2">
-                    <button class="icon-button increase" onclick="increaseFontSize()">increaseFontSize</button>
-                    <button class="icon-button decrease" onclick="decreaseFontSize()">decreaseFontSize</button>
-                    <button onclick="moveLineUp()">↑</button>
-                    <button onclick="moveLineDown()">↓</button>
-                    <button onclick="deleteLine()">Delete Line</button>
-                </div>
-                <div class="control-row3">
-                    <button onclick="addLine()">Add Line</button>
-                    <button onclick="switchLine()">Switch Line</button>
-                    <button onclick="onClearCanvas()">Clear</button>
-                    <button onclick="downloadMeme()">Download Meme</button>
+                <div class="button-container">
+                    <div class="control-row">
+                        <button class="icon-button increase" onclick="increaseFontSize()">A+</button>
+                        <button class="icon-button decrease" onclick="decreaseFontSize()">A-</button>
+                        <button class="icon-button" onclick="moveLineUp()">↑</button>
+                        <button class="icon-button" onclick="moveLineDown()">↓</button>
+                        <button class="icon-button" onclick="deleteLine()">Delete</button>
+                    </div>
+                    <div class="control-row">
+                        <button onclick="addLine()">Add Line</button>
+                        <button onclick="switchLine()">Switch Line</button>
+                        <button onclick="onClearCanvas()">Clear</button>
+                        <button onclick="downloadMeme()">Download</button>
+                    </div>
+                    <div class="control-row">
+                        <button class="generate-meme-button">Generate Random Meme</button>
+                        <button class="save-meme-button">Save Meme</button>
+                    </div>
+                    <div class="control-row">
+                        <button onclick="addSticker('😜')">😜</button>
+                        <button onclick="addSticker('😍')">😍</button>
+                        <button onclick="addSticker('😂')">😂</button>
+                        <button onclick="addSticker('👍')">👍</button>
+                        <button onclick="addSticker('🎉')">🎉</button>
+                    </div>
+                    <div class="control-row">
+                        <input type="file" class="image-input" accept="image/*" onchange="onImageUpload(event)" />
+                    </div>
                 </div>
             </div>
         </section>
         <section class="gallery">
-            <h2>Gallery</h2>
             <div class="gallery-container">
+                <img src="gallery/1.jpg" class="gallery-image" onclick="onImageSelect('gallery/1.jpg')" />
+                <img src="gallery/2.jpg" class="gallery-image" onclick="onImageSelect('gallery/2.jpg')" />
+                <img src="gallery/3.jpg" class="gallery-image" onclick="onImageSelect('gallery/3.jpg')" />
+                <img src="gallery/4.jpg" class="gallery-image" onclick="onImageSelect('gallery/4.jpg')" />
+                <img src="gallery/5.jpg" class="gallery-image" onclick="onImageSelect('gallery/5.jpg')" />
+           
             </div>
-        </section>
+            
+
     </main>
+    <section class="saved-memes">
+        <h2>Saved Memes</h2>
+        <div class="saved-memes-container"></div>
+    </section>
     <footer class="footer">
         Powered by Tal Simoni
     </footer>
@@ -68,5 +92,10 @@
     <script src="js/memeController.js"></script>
     <script src="js/galleryController.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', onInit);
+        document.querySelector('.generate-meme-button').addEventListener('click', generateRandomMeme);
+        document.querySelector('.save-meme-button').addEventListener('click', saveCurrentMeme);
+    </script>
 </body>
 </html>
