@@ -80,11 +80,12 @@ function generateRandomMeme() {
 
 function getRandomText() {
     const texts = [
-        "When you realize...",
-        "That moment when...",
-        "When your code works...",
-        "Just chilling...",
-        "Monday vibes..."
+        "Joey doesnt share food.",
+        "Thats what she said",
+        "My eyes!",
+        "We were on a break!",
+        "Unagi!!",
+        "How you doing"
     ]
     return texts[Math.floor(Math.random() * texts.length)]
 }
