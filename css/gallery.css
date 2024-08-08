@@ -1,13 +1,21 @@
-.gallery {
+.gallery-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 20px;
+    gap: 15px;
 }
 
 .gallery-image {
-    width: 200px;
-    height: 200px;
-    margin: 5px;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
     cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }

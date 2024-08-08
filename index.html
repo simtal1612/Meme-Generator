@@ -12,53 +12,70 @@
         <img src="logo/LOGO.png" class="logo"/>  
         <div class="nav-links">
             <a href="index.html">Home</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="#">MEMES</a>
-            <a href="#">ABOUT</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#memes">Memes</a>
+            <a href="#about">About</a>
         </div>
     </nav>
     <main class="container">
         <section class="editor">
             <h1>Meme Generator</h1>
-            <div class="canvas-container">
-                <canvas class="canvas"></canvas>
-            </div>
-            <div class="controls">
-                <div class="control-row">
-                    <input type="text" class="text-input" placeholder="Enter text" oninput="onTextInput()" />
-                    <input type="color" class="color-picker" oninput="onColorChange()" />
+            <div class="editor-content">
+                <div class="canvas-container">
+                    <canvas class="canvas"></canvas>
                 </div>
-                <div class="control-row">
-                    <select class="font-family" onchange="onFontFamilyChange()">
-                        <option value="Arial">Arial</option>
-                        <option value="Verdana">Verdana</option>
-                        <option value="Times New Roman">Times New Roman</option>
-                        <option value="Georgia">Georgia</option>
-                        <option value="Comic Sans MS">Comic Sans MS</option>
-                    </select>
-                    <input type="number" class="font-size" value="20" min="10" onchange="onFontSizeChange()" />
-                </div>
-                <div class="control-row1">
-                </div>
-                <div class="control-row2">
-                    <button class="icon-button increase" onclick="increaseFontSize()">increaseFontSize</button>
-                    <button class="icon-button decrease" onclick="decreaseFontSize()">decreaseFontSize</button>
-                    <button onclick="moveLineUp()">↑</button>
-                    <button onclick="moveLineDown()">↓</button>
-                    <button onclick="deleteLine()">Delete Line</button>
-                </div>
-                <div class="control-row3">
-                    <button onclick="addLine()">Add Line</button>
-                    <button onclick="switchLine()">Switch Line</button>
-                    <button onclick="onClearCanvas()">Clear</button>
-                    <button onclick="downloadMeme()">Download Meme</button>
+                <div class="controls">
+                    <div class="control-row">
+                        <input type="text" class="text-input" placeholder="Enter text" oninput="onTextInput()" />
+                        <input type="color" class="color-picker" oninput="onColorChange()" />
+                    </div>
+                    <div class="control-row">
+                        <select class="font-family" onchange="onFontFamilyChange()">
+                            <option value="Arial">Arial</option>
+                            <option value="Verdana">Verdana</option>
+                            <option value="Times New Roman">Times New Roman</option>
+                            <option value="Georgia">Georgia</option>
+                            <option value="Comic Sans MS">Comic Sans MS</option>
+                        </select>
+                        <input type="number" class="font-size" value="20" min="10" onchange="onFontSizeChange()" />
+                    </div>
+                    <div class="button-container">
+                        <button class="editor-button" onclick="increaseFontSize()">A+</button>
+                        <button class="editor-button" onclick="decreaseFontSize()">A-</button>
+                        <button class="editor-button" onclick="moveLineUp()">↑</button>
+                        <button class="editor-button" onclick="moveLineDown()">↓</button>
+                        <button class="editor-button" onclick="deleteLine()">Delete</button>
+                    </div>
+                    <div class="button-container">
+                        <button class="editor-button" onclick="addLine()">Add Line</button>
+                        <button class="editor-button" onclick="switchLine()">Switch Line</button>
+                        <button class="editor-button" onclick="onClearCanvas()">Clear</button>
+                        <button class="editor-button" onclick="downloadMeme()">Download</button>
+                    </div>
+                    <div class="button-container">
+                        <button class="editor-button generate-meme-button">Generate Random Meme</button>
+                        <button class="editor-button save-meme-button">Save Meme</button>
+                    </div>
+                    <div class="button-container">
+                        <button class="editor-button" onclick="addSticker('😜')">😜</button>
+                        <button class="editor-button" onclick="addSticker('😍')">😍</button>
+                        <button class="editor-button" onclick="addSticker('😂')">😂</button>
+                        <button class="editor-button" onclick="addSticker('👍')">👍</button>
+                        <button class="editor-button" onclick="addSticker('🎉')">🎉</button>
+                            <input type="file" class="image-input" id="image-input" accept="image/*" onchange="onImageUpload(event)" />
+                            <label for="image-input" class="image-input-label">Upload Image</label>
+                     
+                    </div>
                 </div>
             </div>
         </section>
-        <section class="gallery">
+        <section class="gallery" id="gallery">
             <h2>Gallery</h2>
-            <div class="gallery-container">
-            </div>
+            <div class="gallery-container"></div>
+        </section>
+        <section class="saved-memes" id="memes">
+            <h2>Saved Memes</h2>
+            <div class="saved-memes-container"></div>
         </section>
     </main>
     <footer class="footer">
@@ -68,5 +85,10 @@
     <script src="js/memeController.js"></script>
     <script src="js/galleryController.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', onInit);
+        document.querySelector('.generate-meme-button').addEventListener('click', generateRandomMeme);
+        document.querySelector('.save-meme-button').addEventListener('click', saveCurrentMeme);
+    </script>
 </body>
 </html>
