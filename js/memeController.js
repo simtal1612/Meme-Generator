@@ -1,4 +1,4 @@
-//meme controller js
+'use strict'
 function switchLine() {
     gMeme.selectedLineIdx = (gMeme.selectedLineIdx + 1) % gMeme.lines.length
     updateControlBox()

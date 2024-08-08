@@ -1,5 +1,4 @@
-// memeService.js
-
+'use strict'
 var gImgs = [
     { id: 1, url: 'gallery/1.jpg', keywords: ['funny', 'cat'] },
     { id: 2, url: 'gallery/2.jpg', keywords: ['funny', 'dog'] },

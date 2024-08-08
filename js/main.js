@@ -1,12 +1,11 @@
-// main.js
-
+'use strict'
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.generate-meme-button').addEventListener('click', generateRandomMeme)
     document.querySelector('.save-meme-button').addEventListener('click', saveCurrentMeme)
     onInit()
 })
 
-// Existing main.js functionality
+
 var gElCanvas
 var gCtx
 var gCurrText = ''
@@ -33,14 +32,14 @@ function onInit() {
     console.log('gCtx initialized:', gCtx)
     renderGallery()
     renderMeme()
-    renderSavedMemes()  // Add this line to render saved memes on load
+    renderSavedMemes()  
     window.addEventListener('resize', resizeCanvas)
     gElCanvas.addEventListener('mousedown', handleMouseDown)
     gElCanvas.addEventListener('mousemove', handleMouseMove)
     gElCanvas.addEventListener('mouseup', handleMouseUp)
     gElCanvas.addEventListener('mouseout', handleMouseUp)
 
-    // Load meme from local storage if available
+
     const storedMeme = localStorage.getItem('gMeme')
     if (storedMeme) {
         gMeme = JSON.parse(storedMeme)
@@ -72,10 +71,10 @@ function generateRandomMeme() {
         rotation: 0
     }]
 
-    // Save the meme data to local storage
+
     localStorage.setItem('gMeme', JSON.stringify(gMeme))
 
-    // Render the meme
+
     renderMeme()
 }
 
@@ -162,7 +161,7 @@ function addSticker(sticker) {
 
 function saveCurrentMeme() {
     saveMeme()
-    renderSavedMemes()  // Add this line to refresh the saved memes list
+    renderSavedMemes() 
 }
 
 function renderSavedMemes() {
@@ -244,10 +243,8 @@ function handleMouseDown(event) {
     const y = event.clientY - rect.top
 
     if (event.altKey) {
-        // Start resizing
         gResizing = true
     } else if (event.shiftKey) {
-        // Start rotating
         gRotating = true
     } else {
         handleCanvasClick(event)

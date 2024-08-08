@@ -1,4 +1,4 @@
-//gallery controller js
+'use strict'
 function renderGallery() {
     const galleryContainer = document.querySelector('.gallery-container')
     galleryContainer.innerHTML = gImgs.map(img =>
